@@ -28,4 +28,13 @@ public class DynamicLoadingTest extends BaseTests {
 
         assertEquals(text,"Hello World!","Text is incorrect");
     }
+    @Test
+    public void dynamicLoadingEx2Test(){
+        var dynamicloading = homePage.clickDynamicLoadingLink().clickEx2();
+        dynamicloading
+                .clickStart()
+                .waitUntilLoading()
+                .getResultText();
+        assertEquals(dynamicloading.getResultText(),"Hello World!","Text is incorrect");
+    }
 }
