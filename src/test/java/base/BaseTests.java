@@ -19,10 +19,11 @@ public class BaseTests {
         driver.get(targetUrl);
         homePage = new HomePage(driver);
     }
-//    @BeforeMethod
-//    public void goHome(){
-//        driver.get(targetUrl);
-//    }
+    @BeforeMethod
+    public void goHome(){
+        driver.get(targetUrl);
+        homePage = new HomePage(driver);
+    }
 
 
     @AfterClass
