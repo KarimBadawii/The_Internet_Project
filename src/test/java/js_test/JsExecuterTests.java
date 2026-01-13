@@ -9,4 +9,9 @@ public class JsExecuterTests extends BaseTests {
         var scrollPage = homePage.clickLargeAndDeepDomLink();
         scrollPage.scrollTo();
     }
+    @Test
+    public void testScrollToParagraph(){
+        var scrollPage = homePage.clickInfiniteScrollLink();
+        scrollPage.scrollToParagraph(5);
+    }
 }
