@@ -16,8 +16,7 @@ public class BaseTests {
     public void setUp(){
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.get(targetUrl);
-        homePage = new HomePage(driver);
+        goHome();
     }
     @BeforeMethod
     public void goHome(){
