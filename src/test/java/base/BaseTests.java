@@ -1,12 +1,15 @@
 package base;
 
 import Pages.HomePage;
+import Utils.MyListener;
 import Utils.WindowManager;
 import com.google.common.io.Files;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.events.EventFiringDecorator;
+import org.openqa.selenium.support.events.WebDriverListener;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -29,8 +32,10 @@ public class BaseTests {
     }
     @BeforeMethod
     public void goHome(){
-        driver.get(targetUrl);
-        homePage = new HomePage(driver);
+        WebDriverListener listener = new MyListener();
+        WebDriver decorated = new EventFiringDecorator<>(listener).decorate(driver) ;
+        decorated.get(targetUrl);
+        homePage = new HomePage(decorated);
     }
 
 
@@ -46,7 +51,7 @@ public class BaseTests {
             var takeScreenshot = (TakesScreenshot) driver;
             File screenShot = takeScreenshot.getScreenshotAs(OutputType.FILE);
             try {
-                Files.move(screenShot, new File("resources/screenshots/"+result.getName()+".png"));
+                Files.move(screenShot, new File("src/main/resources/screenshots"+result.getName()+".png"));
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
