@@ -78,4 +78,9 @@ public class HomePage {
         return new InfinteScrollPage(driver);
     }
 
+    public MultipleWindowsPage clickMultipleWidowLink(){
+        clickLink("Multiple Windows");
+        return new MultipleWindowsPage(driver);
+    }
+
 }

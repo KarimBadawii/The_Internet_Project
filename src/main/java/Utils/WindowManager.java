@@ -2,6 +2,8 @@ package Utils;
 
 import org.openqa.selenium.WebDriver;
 
+import java.util.Set;
+
 public class WindowManager {
     private WebDriver driver;
     private WebDriver.Navigation navigation ;
@@ -24,6 +26,24 @@ public class WindowManager {
 
     public void goTo(String url){
         navigation.to(url);
+    }
+
+    public void switchToTab(String tabTitle){
+       Set<String> windowHandles = driver.getWindowHandles();
+
+        System.out.println("Number of tabs: " + windowHandles.size());
+        for(String windowHandle : windowHandles){
+            System.out.println(windowHandle);
+        }
+
+        for (String windowHandle : windowHandles){
+            driver.switchTo().window(windowHandle);
+            if(tabTitle.equals(driver.getTitle())){
+                break;
+            }
+        }
+
+
     }
 
 }
