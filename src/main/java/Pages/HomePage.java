@@ -88,4 +88,9 @@ public class HomePage {
         return new AddAndRemovePage(driver);
     }
 
+    public BrokenImagesPage clickBorkenImageLink(){
+        clickLink("Broken Images");
+        return new BrokenImagesPage(driver);
+    }
+
 }
