@@ -98,4 +98,9 @@ public class HomePage {
         return new CheckBoxesPage(driver);
     }
 
+    public ContextMenuPage clickContextMenuLink(){
+        clickLink("Context Menu");
+        return new ContextMenuPage(driver);
+    }
+
 }
