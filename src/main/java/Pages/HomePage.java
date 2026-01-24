@@ -83,4 +83,9 @@ public class HomePage {
         return new MultipleWindowsPage(driver);
     }
 
+    public AddAndRemovePage clickAddAndRemoveLink(){
+        clickLink("Add/Remove Elements");
+        return new AddAndRemovePage(driver);
+    }
+
 }
