@@ -83,4 +83,29 @@ public class HomePage {
         return new MultipleWindowsPage(driver);
     }
 
+    public AddAndRemovePage clickAddAndRemoveLink(){
+        clickLink("Add/Remove Elements");
+        return new AddAndRemovePage(driver);
+    }
+
+    public BrokenImagesPage clickBorkenImageLink(){
+        clickLink("Broken Images");
+        return new BrokenImagesPage(driver);
+    }
+
+    public CheckBoxesPage clickCheckBoxesLink(){
+        clickLink("Checkboxes");
+        return new CheckBoxesPage(driver);
+    }
+
+    public ContextMenuPage clickContextMenuLink(){
+        clickLink("Context Menu");
+        return new ContextMenuPage(driver);
+    }
+
+    public DisappearingElementsPage clickDisappearingElementsLink(){
+        clickLink("Disappearing Elements");
+        return new DisappearingElementsPage(driver);
+    }
+
 }
