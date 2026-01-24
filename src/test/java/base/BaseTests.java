@@ -20,6 +20,7 @@ import org.testng.annotations.BeforeMethod;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Arrays;
 
 public class BaseTests {
     private WebDriver driver ;
@@ -28,6 +29,8 @@ public class BaseTests {
 
     @BeforeClass
     public void setUp(){
+
+//        driver = new ChromeDriver(getChromeOptions());
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         goHome();
@@ -70,10 +73,12 @@ public class BaseTests {
     private ChromeOptions getChromeOptions(){
         ChromeOptions chromeOptions = new ChromeOptions() ;
             chromeOptions.addArguments("--headless");
+            chromeOptions.setExperimentalOption("--excludeSwitches", Arrays.asList("enable-automation"));
             chromeOptions.addArguments("--window-size=1920,1080");
             chromeOptions.addArguments("--disable-gpu");
             chromeOptions.addArguments("--no-sandbox");
             chromeOptions.addArguments("--disable-dev-shm-usage");
+
             return chromeOptions ;
 
     }
