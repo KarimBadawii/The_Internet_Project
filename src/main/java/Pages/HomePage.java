@@ -103,4 +103,9 @@ public class HomePage {
         return new ContextMenuPage(driver);
     }
 
+    public DisappearingElementsPage clickDisappearingElementsLink(){
+        clickLink("Disappearing Elements");
+        return new DisappearingElementsPage(driver);
+    }
+
 }
