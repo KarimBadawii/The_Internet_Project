@@ -93,4 +93,9 @@ public class HomePage {
         return new BrokenImagesPage(driver);
     }
 
+    public CheckBoxesPage clickCheckBoxesLink(){
+        clickLink("Checkboxes");
+        return new CheckBoxesPage(driver);
+    }
+
 }
