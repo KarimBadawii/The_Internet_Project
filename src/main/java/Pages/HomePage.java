@@ -73,5 +73,14 @@ public class HomePage {
         return new LargeAndDeepDomPage(driver);
     }
 
+    public InfinteScrollPage clickInfiniteScrollLink(){
+        clickLink("Infinite Scroll");
+        return new InfinteScrollPage(driver);
+    }
+
+    public MultipleWindowsPage clickMultipleWidowLink(){
+        clickLink("Multiple Windows");
+        return new MultipleWindowsPage(driver);
+    }
 
 }
