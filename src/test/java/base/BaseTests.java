@@ -56,7 +56,7 @@ public class BaseTests {
             var takeScreenshot = (TakesScreenshot) driver;
             File screenShot = takeScreenshot.getScreenshotAs(OutputType.FILE);
             try {
-                Files.move(screenShot, new File("src/main/resources/screenshots"+result.getName()+".png"));
+                Files.move(screenShot, new File("src/main/resources/screenshots"+result.getName()+result.getStartMillis()+".png"));
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }

@@ -11,7 +11,7 @@ public class BrokenImagesTests extends BaseTests {
     @Test
     public void verifyBrokenImagesExist() {
 
-        var page = homePage.clickBorkenImageLink();
+        var page = homePage.clickBrokenImageLink();
         int brokenImages = 0;
 
         for (WebElement image : page.getImages()) {
