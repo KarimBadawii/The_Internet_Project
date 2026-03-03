@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="The Internet Project Test Suite" verbose="1">
+
+    <test name="Login and Navigation">
+        <packages>
+            <package name="login"/>
+            <package name="navigations"/>
+            <package name="MenuItems"/>
+        </packages>
+    </test>
+
+    <test name="Form Interaction">
+        <packages>
+            <package name="dropdown"/>
+            <package name="checkBoxes"/>
+            <package name="keys"/>
+            <package name="add_and_remove_tests"/>
+        </packages>
+    </test>
+
+    <test name="Alerts and Frames">
+        <packages>
+            <package name="js_test"/>
+            <package name="entryAd"/>
+            <package name="Frames"/>
+        </packages>
+    </test>
+
+    <test name="Dynamic Content and Media">
+        <packages>
+            <package name="dynamic_loading"/>
+            <package name="figures"/>
+            <package name="images"/>
+        </packages>
+    </test>
+
+</suite>

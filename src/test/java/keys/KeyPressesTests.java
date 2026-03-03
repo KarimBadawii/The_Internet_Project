@@ -10,8 +10,7 @@ public class KeyPressesTests extends BaseTests {
     @Test
     public void testKeyPresses(){
         var keyPresses = homePage.clickKeyPresses();
-//        keyPresses.setText("B"+Keys.BACK_SPACE);
         keyPresses.setText(Keys.chord(Keys.SHIFT, "b"));
-        assertEquals(keyPresses.getText(), "You entered: BACK_SPACE", "Wrong text");
+        assertEquals(keyPresses.getText(), "You entered: B", "Wrong text");
     }
 }

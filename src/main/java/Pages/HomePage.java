@@ -88,7 +88,7 @@ public class HomePage {
         return new AddAndRemovePage(driver);
     }
 
-    public BrokenImagesPage clickBorkenImageLink(){
+    public BrokenImagesPage clickBrokenImageLink(){
         clickLink("Broken Images");
         return new BrokenImagesPage(driver);
     }
