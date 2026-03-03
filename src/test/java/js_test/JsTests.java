@@ -20,9 +20,8 @@ public class JsTests extends BaseTests {
     public void testDismissAlert() {
         var jsAlertPage = homePage.clickJSAlert();
         jsAlertPage.triggerConfirm();
-        assertEquals(jsAlertPage.getResult(), text, "You clicked: Cancel");
         jsAlertPage.alert_clickToDismiss();
-        assertEquals(jsAlertPage.getResult(), "You clicked: Cancel");
+        assertEquals(jsAlertPage.getResult(), "You clicked: Cancel", "Result text incorrect");
     }
 
     @Test
@@ -32,5 +31,6 @@ public class JsTests extends BaseTests {
         jsAlertPage.triggerPrompt();
         jsAlertPage.alert_setInput(text);
         jsAlertPage.alert_clickToAccept();
+        assertEquals(jsAlertPage.getResult(), "You entered: " + text, "Result text incorrect");
     }
 }

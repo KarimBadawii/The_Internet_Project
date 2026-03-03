@@ -4,11 +4,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class JSAlertPage {
-    private WebDriver driver ;
-    private By triggerAlretButton = By.xpath(".//button[text()='Click for JS Alert']");
-    private By triggerConfirmButton = By.xpath(".//button[text()='Click for JS Confirm']");
-    private By triggerPromptButton = By.xpath(".//button[Contains(text(),'JS Prompt')]");
-    private By result = By.id("result");
+    private final WebDriver driver ;
+    private final By triggerAlretButton = By.xpath(".//button[text()='Click for JS Alert']");
+    private final By triggerConfirmButton = By.xpath(".//button[text()='Click for JS Confirm']");
+    private final By triggerPromptButton = By.xpath(".//button[text()='Click for JS Prompt']");
+    private final By result = By.id("result");
 
     public JSAlertPage(WebDriver driver){
         this.driver = driver;
